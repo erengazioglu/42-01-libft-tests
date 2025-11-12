@@ -1,0 +1,13 @@
+#ifndef TESTS_H
+# define TESTS_H
+
+# include "../munit/munit.h"
+# include "../01-libft/libft.h"
+
+extern MunitSuite strlcat_suite;
+extern MunitSuite memcpy_suite;
+extern MunitSuite memcmp_suite;
+extern MunitSuite memchr_suite;
+extern MunitSuite memmove_suite;
+
+#endif
