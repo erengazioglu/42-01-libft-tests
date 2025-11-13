@@ -14,6 +14,7 @@ int	main(int argc, char *argv[MUNIT_ARRAY_PARAM(argc + 1)])
 		atoi_suite,
 		strchr_suite,
 		strncmp_suite,
+		strlcpy_suite,
 		{ NULL, NULL, NULL, 0, MUNIT_SUITE_OPTION_NONE }
 	};
 	const MunitSuite main_suite = {

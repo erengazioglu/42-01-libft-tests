@@ -16,5 +16,6 @@ extern MunitSuite strlen_suite;
 extern MunitSuite atoi_suite;
 extern MunitSuite strchr_suite;
 extern MunitSuite strncmp_suite;
+extern MunitSuite strlcpy_suite;
 
 #endif
