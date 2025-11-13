@@ -10,6 +10,17 @@ By default it looks for `../01-libft` and `../munit/munit.c`, but you can modify
 - `@make -C ../01-libft` (in the "all" rule)
 - `../munit/munit.c` (defined in the "SRCS" variable)
 
+## Checklist for adding new tests
+
+- I copy one of the existing `test_*.c` files.
+- I write as many test functions as I need, with the signature `static MunitResult test_<name>(const MunitParameter params[], void* data)`.
+- I register them inside `static MunitTest tests[]` (i.e. `{ "/<test_name>", <fn_name>, NULL, NULL, MUNIT_TEST_OPTION_NONE, NULL },`).
+- I rename the test suite: `MunitSuite <name>_suite = { "/<suite_name>", tests, NULL, 1, MUNIT_SUITE_OPTION_NONE };`.
+- I add the test suite into `tests.h` as follows: `extern MunitSuite <name>_suite`.
+- I add the same suite to `main.c`.
+
+Then `make` & enjoy!
+
 ## Troubleshooting
 
 If you're getting the following error:  
