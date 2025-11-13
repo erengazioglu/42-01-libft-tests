@@ -4,6 +4,7 @@
 # include "../munit/munit.h"
 # include "../01-libft/libft.h"
 
+extern MunitSuite charfn_suite;
 extern MunitSuite strlcat_suite;
 extern MunitSuite memcpy_suite;
 extern MunitSuite memcmp_suite;

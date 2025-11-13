@@ -4,6 +4,7 @@
 int	main(int argc, char *argv[MUNIT_ARRAY_PARAM(argc + 1)])
 {
 	MunitSuite all_suites[] = {
+		charfn_suite,
 		strlcat_suite,
 		memcpy_suite,
 		memcmp_suite,

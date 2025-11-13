@@ -11,6 +11,7 @@ SRCS	= \
 		test_memcmp.c \
 		test_memchr.c \
 		test_memmove.c \
+		test_charfn.c \
 		../01-libft/libft.a
 
 all		:
