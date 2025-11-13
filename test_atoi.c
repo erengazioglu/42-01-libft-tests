@@ -57,15 +57,36 @@ static MunitResult test_malformed(const MunitParameter params[], void* data)
 		ft_atoi("-+24121"), ==, 
 		atoi("-+24121")
 	);
-
+	munit_assert_int(
+		ft_atoi("-+241\02fds1"), ==, 
+		atoi("-+241\02fds1")
+	);
 
 	return (MUNIT_OK);
+}
+
+static MunitResult test_edge(const MunitParameter params[], void *data)
+{
+	(void) params; (void) data;
+
+	munit_assert_int(
+		ft_atoi(""), ==, atoi("")
+	);
+	munit_assert_int(
+		ft_atoi("000"), ==, atoi("000")
+	);
+	munit_assert_int(
+		ft_atoi("-000"), ==, atoi("-000")
+	);
+	munit_assert_int(
+		ft_atoi("+000"), ==, atoi("+000")
+	);
 }
 
 static MunitTest tests[] = {
 	{ "/basic", test_basic, NULL, NULL, MUNIT_TEST_OPTION_NONE, NULL },
 	{ "/malformed", test_malformed, NULL, NULL, MUNIT_TEST_OPTION_NONE, NULL },
-
+	{ "/edge", test_edge, NULL, NULL, MUNIT_TEST_OPTION_NONE, NULL },
 	{ NULL, NULL, NULL, NULL, MUNIT_TEST_OPTION_NONE, NULL }
 };
 
