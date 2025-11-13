@@ -10,6 +10,7 @@ int	main(int argc, char *argv[MUNIT_ARRAY_PARAM(argc + 1)])
 		memcmp_suite,
 		memchr_suite,
 		memmove_suite,
+		strlen_suite,
 		{ NULL, NULL, NULL, 0, MUNIT_SUITE_OPTION_NONE }
 	};
 	const MunitSuite main_suite = {
