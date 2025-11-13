@@ -18,4 +18,6 @@ If you're getting the following error:
     2 | #include <bsd/string.h>
 ```
 It means you don't have bsd installed on your system (are you running a WSL maybe?).  
-In that case, you simply have to install bsd running `sudo apt install libbsd-dev`.
+In that case, you simply have to install bsd running either: 
+- `sudo apt install libbsd-dev` (linux)
+- 
