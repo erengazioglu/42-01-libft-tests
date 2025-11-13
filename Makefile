@@ -1,5 +1,5 @@
 CC		= cc
-CFLAGS	= -std=c11
+CFLAGS	= --no-warnings -std=c11
 NAME	= run
 
 # ---
