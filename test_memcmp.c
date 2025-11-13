@@ -1,6 +1,11 @@
 #include "tests.h"
 #include <bsd/string.h>
 
+int	are_same_sign(int i, int j)
+{
+	return ((i < 0 && j < 0) || (i >= 0 && j >= 0));
+}
+
 static MunitResult test_basic(const MunitParameter params[], void* data)
 {
 	(void) params; (void) data;
@@ -34,10 +39,8 @@ static MunitResult test_null_char(const MunitParameter params[], void* data)
 	char	*s1 = "atoms\0\0\0\0";
 	char	*s2 = "atoms\0abc";
 
-	munit_assert_int(
-		ft_memcmp(s1, s2, 8),
-		==,
-		memcmp(s1, s2, 8)
+	munit_assert_true(
+		are_same_sign(ft_memcmp(s1, s2, 8), memcmp(s1, s2, 8))
 	);
 	return (MUNIT_OK);
 }

@@ -6,13 +6,7 @@ INC		= tests.h
 SRCS	= \
 		../munit/munit.c \
 		main.c \
-		test_strlcat.c \
-		test_memcpy.c \
-		test_memcmp.c \
-		test_memchr.c \
-		test_memmove.c \
-		test_charfn.c \
-		test_strlen.c \
+		$(wildcard test_*.c) \
 		../01-libft/libft.a
 
 all		:
