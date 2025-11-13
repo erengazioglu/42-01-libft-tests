@@ -71,12 +71,43 @@ static MunitResult test_isprint(const MunitParameter params[], void* data)
 	return (MUNIT_OK);
 }
 
+static MunitResult test_toupper(const MunitParameter params[], void* data)
+{
+	(void) params; (void) data;
+
+	munit_assert_char(ft_toupper('A'), ==, 'A');
+	munit_assert_char(ft_toupper('a'), ==, 'A');
+	munit_assert_char(ft_toupper('0'), ==, '0');
+	munit_assert_char(ft_toupper('9'), ==, '9');
+	munit_assert_char(ft_toupper(' '), ==, ' ');
+	munit_assert_char(ft_toupper('\0'), ==, '\0');
+
+	return (MUNIT_OK);
+}
+
+static MunitResult test_tolower(const MunitParameter params[], void* data)
+{
+	(void) params; (void) data;
+
+	munit_assert_char(ft_toupper('A'), ==, 'a');
+	munit_assert_char(ft_toupper('a'), ==, 'a');
+	munit_assert_char(ft_toupper('0'), ==, '0');
+	munit_assert_char(ft_toupper('9'), ==, '9');
+	munit_assert_char(ft_toupper(' '), ==, ' ');
+	munit_assert_char(ft_toupper('\0'), ==, '\0');
+
+	return (MUNIT_OK);
+}
+
+
 static MunitTest tests[] = {
 	{ "/isalnum", test_isalnum, NULL, NULL, MUNIT_TEST_OPTION_NONE, NULL },
 	{ "/isalpha", test_isalpha, NULL, NULL, MUNIT_TEST_OPTION_NONE, NULL },
 	{ "/isascii", test_isascii, NULL, NULL, MUNIT_TEST_OPTION_NONE, NULL },
 	{ "/isdigit", test_isdigit, NULL, NULL, MUNIT_TEST_OPTION_NONE, NULL },
 	{ "/isprint", test_isprint, NULL, NULL, MUNIT_TEST_OPTION_NONE, NULL },
+	{ "/toupper", test_isprint, NULL, NULL, MUNIT_TEST_OPTION_NONE, NULL },
+	{ "/tolower", test_isprint, NULL, NULL, MUNIT_TEST_OPTION_NONE, NULL },
 	{ NULL, NULL, NULL, NULL, MUNIT_TEST_OPTION_NONE, NULL }
 };
 
