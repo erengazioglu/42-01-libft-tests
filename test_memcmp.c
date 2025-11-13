@@ -1,11 +1,6 @@
 #include "tests.h"
 #include <bsd/string.h>
 
-int	are_same_sign(int i, int j)
-{
-	return ((i < 0 && j < 0) || (i >= 0 && j >= 0));
-}
-
 static MunitResult test_basic(const MunitParameter params[], void* data)
 {
 	(void) params; (void) data;

@@ -26,6 +26,7 @@ SRCS	= \
 		../munit/munit.c \
 		main.c \
 		$(wildcard test_*.c) \
+		helpers.c \
 		../01-libft/libft.a
 
 # ---
