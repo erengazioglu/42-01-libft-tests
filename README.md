@@ -20,4 +20,4 @@ If you're getting the following error:
 It means you don't have bsd installed on your system (are you running a WSL maybe?).  
 In that case, you simply have to install bsd running either: 
 - `sudo apt install libbsd-dev` (linux)
-- 
+- `brew install libbsd` (mac)
