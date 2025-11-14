@@ -28,6 +28,25 @@ static MunitResult test_basic(const MunitParameter params[], void* data)
 
 	return (MUNIT_OK);
 }
+static MunitResult test_whitespace(const MunitParameter params[], void* data)
+{
+	(void) params; (void) data;
+
+	munit_assert_int(
+		ft_atoi("\t\v\f\r\n -01934"), ==, 
+		atoi("\t\v\f\r\n -01934")
+	);
+	munit_assert_int(
+		ft_atoi("-019\t\v\f\r\n 34"), ==, 
+		atoi("-019\t\v\f\r\n 34")
+	);
+	munit_assert_int(
+		ft_atoi("-01934\t\v\f\r\n "), ==, 
+		atoi("-01934\t\v\f\r\n ")
+	);
+
+	return (MUNIT_OK);
+}
 
 static MunitResult test_malformed(const MunitParameter params[], void* data)
 {
@@ -83,8 +102,11 @@ static MunitResult test_edge(const MunitParameter params[], void *data)
 	);
 }
 
+
+
 static MunitTest tests[] = {
 	{ "/basic", test_basic, NULL, NULL, MUNIT_TEST_OPTION_NONE, NULL },
+	{ "/whitespace", test_whitespace, NULL, NULL, MUNIT_TEST_OPTION_NONE, NULL },
 	{ "/malformed", test_malformed, NULL, NULL, MUNIT_TEST_OPTION_NONE, NULL },
 	{ "/edge", test_edge, NULL, NULL, MUNIT_TEST_OPTION_NONE, NULL },
 	{ NULL, NULL, NULL, NULL, MUNIT_TEST_OPTION_NONE, NULL }
