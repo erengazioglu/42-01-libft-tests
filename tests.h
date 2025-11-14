@@ -20,5 +20,6 @@ extern MunitSuite strncmp_suite;
 extern MunitSuite strlcpy_suite;
 extern MunitSuite bzero_suite;
 extern MunitSuite strnstr_suite;
+extern MunitSuite calloc_suite;
 
 #endif
