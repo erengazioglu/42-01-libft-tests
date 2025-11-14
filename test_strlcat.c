@@ -98,11 +98,21 @@ static MunitResult test_dstsize_short(const MunitParameter params[], void* data)
 static MunitResult test_dstsize_zero(const MunitParameter params[], void* data)
 {
 	(void) params; (void) data;
-	char str[20] = "hello";
-	int result = ft_strlcat(str, " sup", 0);
+	char str1[20] = "hello";
+	char str2[20] = "hello";
+	
+	int result1 = ft_strlcat(str1, " sup", 0);
+	int result2 = strlcat(str2, " sup", 0);
+	munit_assert_string_equal(str1, str2);
+	munit_assert_int(result1, ==, result2);
 
-	munit_assert_string_equal(str, "hello");
-	munit_assert_int(result, ==, 4);
+	char *str3 = NULL;
+	char *str4 = NULL;
+	result1 = ft_strlcat(str3, " sup", 0);
+	result2 = strlcat(str4, " sup", 0);
+	munit_assert_null(str3);
+	munit_assert_int(result1, ==, result2);
+
 	return (MUNIT_OK);
 }
 
