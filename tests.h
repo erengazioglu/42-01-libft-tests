@@ -12,6 +12,7 @@ extern MunitSuite memcpy_suite;
 extern MunitSuite memcmp_suite;
 extern MunitSuite memchr_suite;
 extern MunitSuite memmove_suite;
+extern MunitSuite memset_suite;
 extern MunitSuite strlen_suite;
 extern MunitSuite atoi_suite;
 extern MunitSuite strchr_suite;
