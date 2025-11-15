@@ -21,5 +21,6 @@ extern MunitSuite strlcpy_suite;
 extern MunitSuite bzero_suite;
 extern MunitSuite strnstr_suite;
 extern MunitSuite calloc_suite;
+extern MunitSuite substr_suite;
 
 #endif

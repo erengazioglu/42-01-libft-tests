@@ -3,7 +3,7 @@
 
 int	main(int argc, char *argv[MUNIT_ARRAY_PARAM(argc + 1)])
 {
-	MunitSuite all_suites[] = {
+	MunitSuite libc_suites[] = {
 		atoi_suite,
 		bzero_suite,
 		calloc_suite,
@@ -21,8 +21,19 @@ int	main(int argc, char *argv[MUNIT_ARRAY_PARAM(argc + 1)])
 		strlcat_suite,
 		{ NULL, NULL, NULL, 0, MUNIT_SUITE_OPTION_NONE }
 	};
+	MunitSuite extra_suites[] = {
+		substr_suite,
+		{ NULL, NULL, NULL, 0, MUNIT_SUITE_OPTION_NONE }
+	};
+	MunitSuite all[] = {
+		{ "/libc", NULL, libc_suites, 1, MUNIT_SUITE_OPTION_NONE },
+		{ "/extra", NULL, extra_suites, 1, MUNIT_SUITE_OPTION_NONE },
+		{ NULL, NULL, NULL, 0, MUNIT_SUITE_OPTION_NONE }
+	};
+
+
 	const MunitSuite main_suite = {
-		"/libft", NULL, (MunitSuite *) all_suites, 1, MUNIT_SUITE_OPTION_NONE
+		"/libft", NULL, (MunitSuite *) all, 1, MUNIT_SUITE_OPTION_NONE
 	};
 	return munit_suite_main(&main_suite, NULL, argc, argv);
 }
