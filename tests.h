@@ -23,4 +23,7 @@ extern MunitSuite strnstr_suite;
 extern MunitSuite calloc_suite;
 extern MunitSuite substr_suite;
 
+// bonus
+extern MunitSuite lstadd_back_suite;
+
 #endif

@@ -25,9 +25,14 @@ int	main(int argc, char *argv[MUNIT_ARRAY_PARAM(argc + 1)])
 		substr_suite,
 		{ NULL, NULL, NULL, 0, MUNIT_SUITE_OPTION_NONE }
 	};
+	MunitSuite bonus_suites[] = {
+		lstadd_back_suite,
+		{ NULL, NULL, NULL, 0, MUNIT_SUITE_OPTION_NONE }
+	};
 	MunitSuite all[] = {
 		{ "/libc", NULL, libc_suites, 1, MUNIT_SUITE_OPTION_NONE },
 		{ "/extra", NULL, extra_suites, 1, MUNIT_SUITE_OPTION_NONE },
+		{ "/bonus", NULL, bonus_suites, 1, MUNIT_SUITE_OPTION_NONE },
 		{ NULL, NULL, NULL, 0, MUNIT_SUITE_OPTION_NONE }
 	};
 
