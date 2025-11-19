@@ -4,8 +4,10 @@
 # include "../munit/munit.h"
 # include "../01-libft/libft.h"
 
+// helpers
 int	are_same_sign(int i, int j);
 
+// basic
 extern MunitSuite charfn_suite;
 extern MunitSuite strlcat_suite;
 extern MunitSuite memcpy_suite;
@@ -21,7 +23,12 @@ extern MunitSuite strlcpy_suite;
 extern MunitSuite bzero_suite;
 extern MunitSuite strnstr_suite;
 extern MunitSuite calloc_suite;
+
+// extra
 extern MunitSuite substr_suite;
+extern MunitSuite itoa_suite;
+extern MunitSuite strjoin_suite;
+extern MunitSuite strtrim_suite;
 
 // bonus
 extern MunitSuite lstadd_back_suite;
