@@ -92,6 +92,15 @@ static MunitResult test_dstsize_short(const MunitParameter params[], void* data)
 	munit_assert_string_equal(str2, "hello h");
 	munit_assert_int(result2, ==, 17);
 
+	char str3[20] = "rrrrrrrrrrrrrrr";
+	char str4[20] = "rrrrrrrrrrrrrrr";
+	int result3 = ft_strlcat(str3, "lorem ipsum dolor sit amet", 5);
+	int result4 = strlcat(str4, "lorem ipsum dolor sit amet", 5);
+	// printf("\nft_strlen -> %s\n", str3);
+	// printf("strlen -> %s\n", str4);
+	munit_assert_string_equal(str3, str4);
+	munit_assert_int(result3, ==, result4);
+
 	return (MUNIT_OK);
 }
 

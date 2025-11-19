@@ -1,5 +1,5 @@
 #include "tests.h"
-#include <bsd/string.h>
+#include <limits.h>
 
 static MunitResult test_basic(const MunitParameter params[], void* data)
 {
@@ -26,6 +26,13 @@ static MunitResult test_malloc_failure(const MunitParameter params[], void* data
 	munit_assert_null(
 		ft_calloc(-1, 1)
 	);
+	munit_assert_null(
+		ft_calloc(-5, -5)
+	);
+	munit_assert_null(
+		ft_calloc(SIZE_MAX, SIZE_MAX)
+	);
+
 
 	return (MUNIT_OK);
 }
